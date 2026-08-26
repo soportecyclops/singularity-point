@@ -1,0 +1,276 @@
+[gd_scene load_steps=2 format=3 uid="uid://bootscene001"]
+
+[ext_resource type="Script" path="res://scenes/boot/boot.gd" id="1_boot"]
+
+[node name="Boot" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_boot")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.06, 0.06, 0.08, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -250.0
+offset_right = 250.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Title" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "SINGULARITY POINT"
+horizontal_alignment = 1
+
+[node name="Era" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "ERA 0"
+horizontal_alignment = 1
+
+[node name="Build" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Prototype Build"
+horizontal_alignment = 1
+
+[node name="Spacer" type="Control" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="TimeDisplay" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "DAY 1
+09:00:00"
+horizontal_alignment = 1
+
+[node name="SpeedControls" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="PauseButton" type="Button" parent="VBoxContainer/SpeedControls"]
+layout_mode = 2
+text = "PAUSE"
+metadata/speed = 0
+
+[node name="Speed1x" type="Button" parent="VBoxContainer/SpeedControls"]
+layout_mode = 2
+text = "1x"
+metadata/speed = 1
+
+[node name="Speed2x" type="Button" parent="VBoxContainer/SpeedControls"]
+layout_mode = 2
+text = "2x"
+metadata/speed = 2
+
+[node name="Speed4x" type="Button" parent="VBoxContainer/SpeedControls"]
+layout_mode = 2
+text = "4x"
+metadata/speed = 4
+
+[node name="Speed8x" type="Button" parent="VBoxContainer/SpeedControls"]
+layout_mode = 2
+text = "8x"
+metadata/speed = 8
+
+[node name="Spacer2" type="Control" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="DebugPanel" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="DebugTitle" type="Label" parent="VBoxContainer/DebugPanel"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "GAME STATE"
+horizontal_alignment = 1
+
+[node name="DebugEra" type="Label" parent="VBoxContainer/DebugPanel"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Era: 0"
+horizontal_alignment = 1
+
+[node name="DebugCompany" type="Label" parent="VBoxContainer/DebugPanel"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Company: Not Founded"
+horizontal_alignment = 1
+
+[node name="DebugAI" type="Label" parent="VBoxContainer/DebugPanel"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "AI: Not Created"
+horizontal_alignment = 1
+
+[node name="CompanyCreationForm" type="VBoxContainer" parent="VBoxContainer"]
+visible = false
+layout_mode = 2
+alignment = 1
+
+[node name="CCTitle" type="Label" parent="VBoxContainer/CompanyCreationForm"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "FOUND YOUR COMPANY"
+horizontal_alignment = 1
+
+[node name="CCNameLabel" type="Label" parent="VBoxContainer/CompanyCreationForm"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Company Name"
+horizontal_alignment = 1
+
+[node name="CCNameInput" type="LineEdit" parent="VBoxContainer/CompanyCreationForm"]
+layout_mode = 2
+placeholder_text = "Enter company name..."
+max_length = 50
+
+[node name="CCColorLabel" type="Label" parent="VBoxContainer/CompanyCreationForm"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Primary Color"
+horizontal_alignment = 1
+
+[node name="CCColorPicker" type="ColorPickerButton" parent="VBoxContainer/CompanyCreationForm"]
+layout_mode = 2
+custom_minimum_size = Vector2(120, 40)
+text = "Select Color"
+color = Color(1, 1, 1, 1)
+
+[node name="CCError" type="Label" parent="VBoxContainer/CompanyCreationForm"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.3, 0.3, 1)
+horizontal_alignment = 1
+
+[node name="CCButton" type="Button" parent="VBoxContainer/CompanyCreationForm"]
+layout_mode = 2
+text = "CREATE COMPANY"
+
+[node name="PostCompanyInfo" type="VBoxContainer" parent="VBoxContainer"]
+visible = false
+layout_mode = 2
+alignment = 1
+
+[node name="PCTitle" type="Label" parent="VBoxContainer/PostCompanyInfo"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "COMPANY FOUNDED"
+horizontal_alignment = 1
+
+[node name="PCName" type="Label" parent="VBoxContainer/PostCompanyInfo"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = ""
+horizontal_alignment = 1
+
+[node name="PCStatus" type="Label" parent="VBoxContainer/PostCompanyInfo"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Status: Founded"
+horizontal_alignment = 1
+
+[node name="PCNext" type="Label" parent="VBoxContainer/PostCompanyInfo"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "AI DEVELOPMENT PENDING"
+horizontal_alignment = 1
+
+
+[node name="AICreationForm" type="VBoxContainer" parent="VBoxContainer"]
+visible = false
+layout_mode = 2
+alignment = 1
+
+[node name="AITitle" type="Label" parent="VBoxContainer/AICreationForm"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "CREATE YOUR AI"
+horizontal_alignment = 1
+
+[node name="AIVisual" type="Label" parent="VBoxContainer/AICreationForm"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = ":)"
+horizontal_alignment = 1
+
+[node name="AINameLabel" type="Label" parent="VBoxContainer/AICreationForm"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "AI Name"
+horizontal_alignment = 1
+
+[node name="AINameInput" type="LineEdit" parent="VBoxContainer/AICreationForm"]
+layout_mode = 2
+placeholder_text = "Enter AI name..."
+max_length = 50
+
+[node name="AICharacteristicsContainer" type="VBoxContainer" parent="VBoxContainer/AICreationForm"]
+layout_mode = 2
+alignment = 1
+
+[node name="AIPointsLabel" type="Label" parent="VBoxContainer/AICreationForm"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Assigned: 0 / 12  |  Remaining: 12"
+horizontal_alignment = 1
+
+[node name="AIThresholdLabel" type="Label" parent="VBoxContainer/AICreationForm"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Core Traits >= 2: 0 / 4"
+horizontal_alignment = 1
+
+[node name="AIError" type="Label" parent="VBoxContainer/AICreationForm"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.3, 0.3, 1)
+horizontal_alignment = 1
+
+[node name="AICreateButton" type="Button" parent="VBoxContainer/AICreationForm"]
+layout_mode = 2
+disabled = true
+text = "CREATE AI"
+
+[node name="PostAIPanel" type="VBoxContainer" parent="VBoxContainer"]
+visible = false
+layout_mode = 2
+alignment = 1
+
+[node name="PATitle" type="Label" parent="VBoxContainer/PostAIPanel"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "AI CREATED"
+horizontal_alignment = 1
+
+[node name="PAName" type="Label" parent="VBoxContainer/PostAIPanel"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = ""
+horizontal_alignment = 1
+
+[node name="PAStatus" type="Label" parent="VBoxContainer/PostAIPanel"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Status: Active"
+horizontal_alignment = 1
